@@ -7,6 +7,7 @@ import './QRCode.css';
 
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const qrRef = useRef(null);
 
   const storyMilestones = [
@@ -70,7 +71,7 @@ const Home = () => {
     { url: "/images/gallery/7.jpeg", caption: "Us" }
   ];
 
-  const invitationUrl = "https://drive.google.com/drive/folders/1MrzGAiR59C-_shz3y9_xAb7e29QG9btv";
+  const invitationUrl = "https://drive.google.com/file/d/1_szeAdT0fDLHOVhPmjKbOQOY8rGBacwm";
 
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
@@ -141,14 +142,14 @@ const Home = () => {
                 <span>Our Story</span>
               </a>
               <a
-                href="#qr-code"
+                href="#invitation"
                 className="btn btn-secondary"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('qr-code').scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('invitation').scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <span>QR Code</span>
+                <span>Invitation</span>
               </a>
             </div>
           </div>
@@ -264,7 +265,12 @@ const Home = () => {
           <div className="floral-divider"></div>
           <div className="details-grid">
             <div className="detail-card">
-              <div className="detail-icon">📅</div>
+              <div className="detail-icon">
+                <div className="custom-calendar">
+                  <div className="calendar-month">FEB</div>
+                  <div className="calendar-date">11</div>
+                </div>
+              </div>
               <h3 className="detail-title">When</h3>
               <p className="detail-info">Wednesday, February 11, 2026</p>
               <p className="detail-time">Dinner & Celebration</p>
@@ -404,13 +410,59 @@ const Home = () => {
         </div>
       </section>
 
-      {/* QR Code Section */}
-      <section id="qr-code" className="qr-page">
+      {/* Invitation Section */}
+      <section id="invitation" className="qr-page">
         <div className="qr-hero">
           <div className="qr-container">
-            <h1 className="qr-title">Wedding Invitation QR Code</h1>
+            <h1 className="qr-title">Wedding Invitation</h1>
             <p className="qr-description">
-              Scan this QR code to view our wedding invitation video and special memories!
+              Watch our special invitation video and share it with your loved ones!
+            </p>
+
+            {/* Video Section */}
+            <div className="qr-card" style={{ marginBottom: '3rem' }}>
+              <div className="video-wrapper" onClick={() => setVideoLoaded(true)}>
+                {!videoLoaded ? (
+                  <div className="video-thumbnail">
+                    <img
+                      src="/images/gallery/6.jpeg"
+                      alt="Play Video"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center 30%',
+                        borderRadius: '20px'
+                      }}
+                    />
+                    <div className="play-button-overlay">
+                      <div className="play-button">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                          <circle cx="40" cy="40" r="38" fill="rgba(255, 255, 255, 0.9)" stroke="var(--primary-color)" strokeWidth="3"/>
+                          <path d="M32 25L55 40L32 55V25Z" fill="var(--primary-color)"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    width="100%"
+                    height="480"
+                    src="https://www.youtube.com/embed/Wdalk8xgcAY?autoplay=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ borderRadius: '20px' }}
+                  ></iframe>
+                )}
+              </div>
+            </div>
+
+            {/* QR Code Section */}
+            <h2 className="qr-title" style={{ fontSize: '2.5rem', marginTop: '2rem' }}>Scan to Watch</h2>
+            <p className="qr-description">
+              Share this QR code with guests to view our invitation video!
             </p>
 
             <div className="qr-card">
@@ -444,38 +496,6 @@ const Home = () => {
                   </svg>
                   <span>Download QR Code</span>
                 </button>
-              </div>
-            </div>
-
-            <div className="instructions">
-              <h3 className="instructions-title">How to Use</h3>
-              <div className="instructions-grid">
-                <div className="instruction-item">
-                  <div className="instruction-number">1</div>
-                  <h4>Download</h4>
-                  <p>Click the download button to save the QR code as a high-quality image.</p>
-                </div>
-                <div className="instruction-item">
-                  <div className="instruction-number">2</div>
-                  <h4>Print</h4>
-                  <p>Add the QR code to your wedding invitations or cards when printing.</p>
-                </div>
-                <div className="instruction-item">
-                  <div className="instruction-number">3</div>
-                  <h4>Share</h4>
-                  <p>Guests can scan the code with their phones to view our invitation video and memories!</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="tip-box">
-              <div className="tip-icon">💡</div>
-              <div className="tip-content">
-                <h4>Pro Tip</h4>
-                <p>
-                  Place the QR code on the back of your wedding invitation or on a separate insert card.
-                  Make sure it's at least 2cm x 2cm for easy scanning!
-                </p>
               </div>
             </div>
           </div>

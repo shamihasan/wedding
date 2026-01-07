@@ -26,8 +26,8 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#qr-code" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('qr-code'); }}>
-              QR Code
+            <a href="#invitation" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('invitation'); }}>
+              Invitation
             </a>
           </li>
         </ul>

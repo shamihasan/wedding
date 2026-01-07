@@ -30,6 +30,16 @@ const Navbar = () => {
               Invitation
             </a>
           </li>
+          <li className="nav-item">
+            <a
+              href="https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
+              className="nav-link nav-link-directions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📍 Directions
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

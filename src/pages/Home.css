@@ -655,6 +655,51 @@ section {
   margin-top: 1rem;
 }
 
+.location-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 168, 124, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.location-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.location-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.location-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(201, 168, 124, 0.5);
+}
+
+.location-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
 /* ========== SAVE THE DATE BANNER ========== */
 .save-date-banner {
   padding: 5rem 2rem;

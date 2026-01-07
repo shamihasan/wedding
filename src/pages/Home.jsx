@@ -282,6 +282,14 @@ const Home = () => {
               <p className="detail-info">The Royal Hall</p>
               <p className="detail-address">Chevron, Noida</p>
               <p className="detail-address">Uttar Pradesh, India</p>
+              <a
+                href="https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="location-btn"
+              >
+                📍 Get Directions
+              </a>
             </div>
 
             <div className="detail-card">
@@ -328,11 +336,14 @@ const Home = () => {
               >
                 <div className="timeline-content">
                   <div className="timeline-emoji">{milestone.emoji}</div>
-                  <div className="timeline-image">
+                  <div
+                    className="timeline-image"
+                    onClick={() => setSelectedImage(milestone.image)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <img
                       src={milestone.image}
                       alt={milestone.title}
-                      onClick={() => setSelectedImage(milestone.image)}
                     />
                     <div className="image-overlay">
                       <span className="image-overlay-text">View</span>
@@ -379,7 +390,7 @@ const Home = () => {
                   key={index}
                   className="gallery-item"
                   onClick={() => setSelectedImage(photo.url)}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.1}s`, cursor: 'pointer' }}
                 >
                   <img src={photo.url} alt={photo.caption} />
                   <div className="gallery-caption">
@@ -459,45 +470,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* QR Code Section */}
-            <h2 className="qr-title" style={{ fontSize: '2.5rem', marginTop: '2rem' }}>Scan to Watch</h2>
-            <p className="qr-description">
-              Share this QR code with guests to view our invitation video!
-            </p>
-
-            <div className="qr-card">
-              <div className="qr-code-wrapper" ref={qrRef}>
-                <QRCodeSVG
-                  value={invitationUrl}
-                  size={300}
-                  bgColor="#ffffff"
-                  fgColor="#2c2c2c"
-                  level="H"
-                  includeMargin={true}
-                />
-              </div>
-
-              <div className="qr-info">
-                <button className="download-btn" onClick={downloadQR}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  <span>Download QR Code</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>

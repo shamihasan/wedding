@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Romantic Rose Gold & Blush Theme */
+  --primary-color: #c9a87c;
+  --primary-dark: #a68a61;
+  --secondary-color: #e8b4b8;
+  --secondary-light: #f4d9dc;
+  --accent-gold: #d4af37;
+  --accent-rose: #d4869c;
+  --text-dark: #2c2c2c;
+  --text-light: #6b6b6b;
+  --text-muted: #999;
+  --background-light: #fdfbf7;
+  --background-cream: #f9f6f0;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.script-font {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Decorative elements */
+.floral-divider {
+  width: 200px;
+  height: 50px;
+  margin: 2rem auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Cpath d='M100 25 Q90 15 80 25 T60 25 M100 25 Q110 15 120 25 T140 25' stroke='%23c9a87c' stroke-width='2' fill='none'/%3E%3Ccircle cx='100' cy='25' r='4' fill='%23e8b4b8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--secondary-light);
+  color: var(--text-dark);
+}

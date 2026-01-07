@@ -1,0 +1,186 @@
+/* Wedding Day Message */
+.wedding-day-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--white), var(--secondary-light));
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: celebrationPulse 2s ease-in-out infinite;
+}
+
+.celebration-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.celebration-icon {
+  font-size: 4rem;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.celebration-icon:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.celebration-icon:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.wedding-day-title {
+  font-size: 4.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  animation: fadeInScale 1s ease-out;
+}
+
+.wedding-day-text {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.wedding-day-subtext {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  animation: fadeIn 1.4s ease-out;
+}
+
+.wedding-day-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.wedding-day-hearts span {
+  font-size: 2.5rem;
+  animation: heartFloat 3s ease-in-out infinite;
+}
+
+.wedding-day-hearts span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.wedding-day-hearts span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.wedding-day-hearts span:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.wedding-day-hearts span:nth-child(5) {
+  animation-delay: 2s;
+}
+
+@keyframes celebrationPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 15px 50px rgba(201, 168, 124, 0.3);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.15);
+  }
+  75% {
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-day-message {
+    padding: 2rem 1.5rem;
+  }
+
+  .celebration-icons {
+    gap: 1rem;
+  }
+
+  .celebration-icon {
+    font-size: 3rem;
+  }
+
+  .wedding-day-title {
+    font-size: 3rem;
+  }
+
+  .wedding-day-text {
+    font-size: 1.5rem;
+  }
+
+  .wedding-day-subtext {
+    font-size: 1.1rem;
+  }
+
+  .wedding-day-hearts span {
+    font-size: 2rem;
+  }
+
+  .wedding-day-hearts {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-day-title {
+    font-size: 2.5rem;
+  }
+
+  .wedding-day-text {
+    font-size: 1.3rem;
+  }
+
+  .celebration-icon {
+    font-size: 2.5rem;
+  }
+}

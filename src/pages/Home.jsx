@@ -23,6 +23,10 @@ const Home = () => {
   const photoGallery = gallery;
   const invitationUrl = invitation.driveUrl;
 
+  // Check if video URL is YouTube or local
+  const isYouTubeVideo = invitation.videoUrl &&
+    (invitation.videoUrl.includes('youtube.com') || invitation.videoUrl.includes('youtu.be'));
+
 
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
@@ -406,16 +410,31 @@ const Home = () => {
                       </div>
                     </div>
                   ) : (
-                    <iframe
-                      width="100%"
-                      height="480"
-                      src={`${invitation.videoUrl}?autoplay=1`}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ borderRadius: '20px' }}
-                    ></iframe>
+                    <>
+                      {isYouTubeVideo ? (
+                        <iframe
+                          width="100%"
+                          height="480"
+                          src={`${invitation.videoUrl}?autoplay=1`}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          style={{ borderRadius: '20px' }}
+                        ></iframe>
+                      ) : (
+                        <video
+                          width="100%"
+                          height="480"
+                          controls
+                          autoPlay
+                          style={{ borderRadius: '20px' }}
+                        >
+                          <source src={invitation.videoUrl} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      )}
+                    </>
                   )}
                 </div>
               </div>

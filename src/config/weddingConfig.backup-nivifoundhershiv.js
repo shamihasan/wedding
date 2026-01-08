@@ -54,10 +54,10 @@ const weddingConfig = {
   // Venue Details
   venue: {
     name: "Rajwada Prakash Vatika",
-    address: "Gosaiganj, Lucknow",
+    address: "Gosainganj, Lucknow",
     state: "Uttar Pradesh",
     country: "India",
-    fullAddress: "Rajwada Prakash Vatika, Gosaiganj, Lucknow",
+    fullAddress: "Rajwada Prakash Vatika, Gosainganj, Lucknow",
     mapsUrl: "https://maps.app.goo.gl/5W9hqRTWFdLnBroL9?g_st=iw"
   },
 
@@ -157,7 +157,7 @@ const weddingConfig = {
 
   // Invitation
   invitation: {
-    videoUrl: "",
+    videoUrl: "/videos/nivifoundhershiv/invitation.mp4",
     thumbnailImage: "/images/nivifoundhershiv/gallery/6.jpg",
     driveUrl: ""
   },

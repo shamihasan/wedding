@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import weddingConfig from './config/weddingConfig';
 import { applyTheme } from './themes/themes';
+import { useMetaTags } from './hooks/useMetaTags';
 import './App.css';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
   useEffect(() => {
     applyTheme(weddingConfig.theme || 'classic');
   }, []);
+
+  // Update meta tags dynamically based on config
+  useMetaTags(weddingConfig);
 
   return (
     <div className="app">

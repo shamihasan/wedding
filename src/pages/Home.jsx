@@ -21,7 +21,6 @@ const Home = () => {
   );
 
   const photoGallery = gallery;
-  const invitationUrl = invitation.driveUrl;
 
   // Check if video URL is YouTube or local
   const isYouTubeVideo = invitation.videoUrl &&

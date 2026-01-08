@@ -159,7 +159,6 @@ const weddingConfig = {
   invitation: {
     videoUrl: "/videos/nivifoundhershiv/invitation.mp4",
     thumbnailImage: "/images/nivifoundhershiv/gallery/6.jpg",
-    driveUrl: ""
   },
 
   // Social Media Preview Image - Use .jpg format

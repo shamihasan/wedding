@@ -148,9 +148,8 @@ const weddingConfig = {
 
   // Invitation
   invitation: {
-    videoUrl: "https://www.youtube.com/embed/Wdalk8xgcAY",
+    videoUrl: "/videos/rakshudaviah/invitation.mp4",
     thumbnailImage: "/images/rakshudaviah/gallery/6.jpg",
-    driveUrl: "https://drive.google.com/file/d/1_szeAdT0fDLHOVhPmjKbOQOY8rGBacwm"
   },
 
   // Social Media Preview Image

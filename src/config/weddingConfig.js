@@ -1,12 +1,12 @@
-// Wedding Configuration - Shivam & Nivedita
-// 🔥🌸 A Sacred Journey Written by Destiny
-// Hashtag: #NiviFoundHerShiv
-// Images: /public/images/nivifoundhershiv/
+// BACKUP CONFIG - Shubham & Rakshita Wedding
+// Configuration for #RakShuDaViah
+// To use this config: Copy entire content to weddingConfig.js
+// Make sure to add images to /public/images/rakshudaviah/ first
 
 const weddingConfig = {
   // Theme Selection - Choose your visual theme!
   // Available: "classic", "royal", "romantic", "modern", "emerald", "sunset", "burgundy"
-  theme: "burgundy", // Change this to switch themes instantly!
+  theme: "romantic", // Change this to switch themes instantly!
 
   // Show Theme Switcher Button (set to false before deployment)
   showThemeSwitcher: false, // Set to false to hide the theme button
@@ -14,51 +14,51 @@ const weddingConfig = {
   // Couple Details
   couple: {
     bride: {
-      fullName: "Nivedita Jaiswal",
-      firstName: "Nivedita",
-      nickname: "Nivi", // Used in hashtag
-      bio: "Loving at heart, cheerful in spirit, and beautifully rooted in customs and family values. Talkative, playful, and delightfully childish at times. 😄🌸💍 🤍",
-      image: "/images/nivifoundhershiv/couple/bride.jpg"
+      fullName: "Rakshita",
+      firstName: "Rakshita",
+      nickname: "Rak",
+      bio: "A beautiful soul with a heart full of dreams. A dietician by profession and a fairy-tale believer by nature, she's bubbly, jolly, and spreads happiness wherever she goes. She finds joy in sunsets, comfort in a cup of tea, and happiness in shopping, living life with warmth, laughter, and endless love 🤍",
+      image: "/images/rakshudaviah/couple/bride.jpg"
     },
     groom: {
-      fullName: "Shivam Jaiswal",
-      firstName: "Shivam",
-      nickname: "Shiv", // Used in hashtag
-      bio: "Simple at heart, caring by nature, and deeply rooted in tradition. With a jolly spirit and a warm smile, he brings joy wherever he goes. Today, he steps forward to begin a beautiful new journey of togetherness. 💍✨ ♥️",
-      image: "/images/nivifoundhershiv/couple/groom.jpg"
+      fullName: "Shubham",
+      firstName: "Shubham",
+      nickname: "Shu",
+      bio: "A soul rooted in faith and spirituality, guided by belief and inner calm. A highly skilled and dedicated software engineer by profession, he balances precision with purpose. A passionate solo traveler and a true foodie at heart, he values honesty, simplicity, and genuine human connections, living life with quiet strength, humility, and warmth ♥️",
+      image: "/images/rakshudaviah/couple/groom.jpg"
     }
   },
 
-  // Hashtag & Image Folder
-  hashtag: "#NiviFoundHerShiv",
-  hashtagFolder: "nivifoundhershiv", // Folder name for this couple's images (lowercase, no special chars)
+  // Hashtag & Folder
+  hashtag: "#RakShuDaViah",
+  hashtagFolder: "rakshudaviah", // Folder name for images
 
   // Event Dates
   dates: {
     engagement: {
-      date: "2025-11-23",
-      displayDate: "23rd November 2025",
+      date: "2025-10-04",
+      displayDate: "4th October 2025",
       hasHappened: true
     },
     wedding: {
-      date: "2026-02-21",
-      displayDate: "Saturday, February 21, 2026",
-      shortDate: "21.02.2026",
-      time: "20:00:00", // 8:00 PM in 24-hour format
+      date: "2026-02-11",
+      displayDate: "Wednesday, February 11, 2026",
+      shortDate: "11.02.2026",
+      time: "20:00:00",
       displayTime: "Dinner & Celebration",
       calendarMonth: "FEB",
-      calendarDay: "21"
+      calendarDay: "11"
     }
   },
 
   // Venue Details
   venue: {
-    name: "Rajwada Prakash Vatika",
-    address: "Gosaiganj, Lucknow",
+    name: "The Royal Hall",
+    address: "Chevron, Noida",
     state: "Uttar Pradesh",
     country: "India",
-    fullAddress: "Rajwada Prakash Vatika, Gosaiganj, Lucknow",
-    mapsUrl: "https://maps.app.goo.gl/5W9hqRTWFdLnBroL9?g_st=iw"
+    fullAddress: "The Royal Hall, Chevron, Noida",
+    mapsUrl: "https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
   },
 
   // Website Details
@@ -72,99 +72,90 @@ const weddingConfig = {
   // Hero Section
   hero: {
     subtitle: "Together Forever",
-    backgroundImage: "/images/nivifoundhershiv/hero/wedding-hero.jpg"
+    backgroundImage: "/images/rakshudaviah/hero/wedding-hero.jpg"
   },
 
   // Story Section
   story: {
-    quote: "Some unions are not found, they are offered by destiny—like a diya lit by elders' hands, meant to glow brighter with time.",
-    quoteAuthor: "Shivam & Nivi — A Sacred Journey Written by Destiny",
-    backgroundImage: "/images/nivifoundhershiv/hero/love-story-bg.jpg",
-    largeQuote: "Love, when rooted in tradition, does not limit freedom—it gives it meaning. An arranged beginning, when nurtured with patience and faith, can bloom into a love as timeless as the sacred fire itself. 🔥❤️"
+    quote: "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.",
+    quoteAuthor: "Maya Angelou",
+    backgroundImage: "/images/rakshudaviah/hero/love-story-bg.jpg",
+    largeQuote: "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."
   },
 
   // Timeline/Milestones
-  // Customize these based on the couple's story
   timeline: [
     {
       id: 1,
       title: "Our First Meet",
-      date: "16th July 2025",
-      description: "On 16th July 2025, our paths crossed for the first time—a meeting as gentle as the first monsoon breeze, carrying curiosity, comfort, and an unspoken promise. Our words were few, yet our silences spoke—as if the universe had softly nodded in approval. 🌸",
-      image: "/images/nivifoundhershiv/timeline/1.jpg",
+      date: "2025",
+      description: "Our first meeting unfolded quietly, wrapped in faith and calm. We began by seeking blessings at the Hanuman Mandir, followed by sharing warm kachoris that sparked easy smiles. The journey then led us to a Gurudwara, where we bowed our heads in gratitude and shared kada prasad together. In those serene moments, comfort replaced nerves, and a gentle connection found its way into our hearts.",
+      image: "/images/rakshudaviah/timeline/1.jpg",
       emoji: "🙏"
     },
     {
       id: 2,
-      title: "A Journey of Faith & Tradition",
-      date: "2025",
-      description: "Shivam and Nivi's story began with their families, who came together like two rivers meeting at a sacred sangam, guided by faith, tradition, and quiet hope. What began as an introduction slowly blossomed like a banyan sapling, patient, steady, and destined to stand strong. Love did not rush in like a storm; it grew like haldi on the skin—slowly, warmly, leaving its golden mark. 🌺",
-      image: "/images/nivifoundhershiv/timeline/2.jpg",
-      emoji: "🕉️"
-    },
-    {
-      id: 3,
-      title: "Our Engagement",
-      date: "23rd November 2025",
-      description: "On 23rd November 2025, under festive lights and sacred smiles, their engagement became the tying of the first knot. Rings circled their fingers like threads of fate, delicate yet unbreakable. That day, blessings flowed like shlokas in the air, and two families became one household of shared dreams. 💍✨",
-      image: "/images/nivifoundhershiv/timeline/3.jpg",
+      title: "Our Roka Ceremony",
+      date: "4th October 2025",
+      description: "On 4th October, surrounded by our closest family and relatives, our roka ceremony unfolded in an atmosphere of love and blessings. With heartfelt rituals, smiling faces, and gentle laughter, two families came together as one. In that moment, promises were sealed, hearts felt lighter, and our journey toward forever took a beautiful, meaningful step forward—wrapped in warmth, tradition, and togetherness.",
+      image: "/images/rakshudaviah/timeline/2.jpg",
       emoji: "💍"
     },
     {
+      id: 3,
+      title: "11:11 – Written by the Universe",
+      date: "2025",
+      description: "We've always believed in the magic of 11:11 — a quiet reminder that the universe listens. Every moment, every step, seemed perfectly timed, as if unseen forces were gently guiding us toward each other. What felt like coincidence slowly revealed itself as destiny. In trusting these cosmic signs, we realized our meeting wasn't accidental — it was meant to be, written softly by the universe itself. ✨🤍",
+      image: "/images/rakshudaviah/timeline/3.jpg",
+      emoji: "✨"
+    },
+    {
       id: 4,
-      title: "The Wait Before Dawn",
-      date: "November 2025 - February 2026",
-      description: "The days that followed felt like the quiet hours before dawn—filled with anticipation, patience, and prayer. Every conversation was a step closer, every plan a petal added to a blooming garland. With time, familiarity took root, and what began as an introduction slowly blossomed into something eternal. 🌅🌸",
-      image: "/images/nivifoundhershiv/timeline/4.jpg",
-      emoji: "🌅"
+      title: "Discovering Similarities",
+      date: "2025",
+      description: "He was a solo traveller who found joy in wandering unknown paths, while she feared being alone but loved creating worlds with her imagination. He prayed to Lord Shiva; she found peace in the hymns of the Gurudwara. Both were jolly, family-loving souls who believed in 11:11 wishes—and yes, both screamed at the sight of a lizard!",
+      image: "/images/rakshudaviah/timeline/4.jpg",
+      emoji: "🦎"
     },
     {
       id: 5,
-      title: "A Sacred Union Written by Destiny",
+      title: "The Perfect Moment",
       date: "2025",
-      description: "This is not merely a wedding—it is the weaving of two lineages, two hearts, and two futures into one eternal rhythm. Their story reminds us that some unions are offered by destiny, like a diya lit by elders' hands, meant to glow brighter with time. 🪔✨",
-      image: "/images/nivifoundhershiv/timeline/5.jpg",
-      emoji: "🪔"
+      description: "In a place that held beauty and meaning, [GROOM_FIRSTNAME] carefully planned the most important moment of his life. With a heart full of love and nervous excitement, he chose this special spot to ask [BRIDE_FIRSTNAME] to be his forever. The setting was perfect, the moment was magical, and her 'Yes' made everything complete. This is where their forever truly began.",
+      image: "/images/rakshudaviah/timeline/5.jpg",
+      emoji: "💐"
     },
     {
       id: 6,
-      title: "Seven Pheras — Seven Promises",
-      date: "21st February 2026",
-      description: "As the agni rises, glowing and eternal, [GROOM_FIRSTNAME] and [BRIDE_FIRSTNAME] will take their seven pheras, each step a promise, each circle a sacred oath—to walk together through joy and sorrow, abundance and scarcity, laughter and silence. With sindoor like sunrise and mangal sutra resting like a sacred mantra, their bond will be sealed by rituals and generations of blessings. 🔥💕",
-      image: "/images/nivifoundhershiv/timeline/6.jpg",
-      emoji: "🔥"
-    },
-    {
-      id: 7,
-      title: "Forever Begins — A Love Timeless as Fire",
-      date: "21st February 2026",
-      description: "This is where their forever truly begins—rooted in tradition, nurtured by faith, and blessed by generations. What began as an arranged beginning bloomed into a love as timeless as the sacred fire itself. Not just a wedding, but the weaving of two souls into one eternal rhythm. 🌺❤️🔥",
-      image: "/images/nivifoundhershiv/timeline/7.jpg",
-      emoji: "❤️"
+      title: "Forever Begins",
+      date: "2025",
+      description: "What began as an arranged meeting slowly unfolded into a connection filled with faith, comfort, and quiet understanding. Guided by blessings, families, and perfectly timed moments, we chose each other with open hearts. In trusting the journey and the universe's plan, we found something real and lasting. Not just a beginning, but a promise—our forever starts here, rooted in love, respect, and togetherness.",
+      image: "/images/rakshudaviah/timeline/6.jpg",
+      emoji: "💍"
     }
   ],
 
-  // Photo Gallery - Use .jpg format for consistency
+  // Photo Gallery
   gallery: [
-    { url: "/images/nivifoundhershiv/gallery/1.jpg", caption: "Our Moments" },
-    { url: "/images/nivifoundhershiv/gallery/2.jpg", caption: "Together" },
-    { url: "/images/nivifoundhershiv/gallery/3.jpg", caption: "Memories" },
-    { url: "/images/nivifoundhershiv/gallery/4.jpg", caption: "Happiness" },
-    { url: "/images/nivifoundhershiv/gallery/5.jpg", caption: "Love" },
-    { url: "/images/nivifoundhershiv/gallery/6.jpg", caption: "Forever" },
-    { url: "/images/nivifoundhershiv/gallery/7.jpg", caption: "Us" }
+    { url: "/images/rakshudaviah/gallery/1.jpg", caption: "Our Moments" },
+    { url: "/images/rakshudaviah/gallery/2.jpg", caption: "Together" },
+    { url: "/images/rakshudaviah/gallery/3.jpg", caption: "Memories" },
+    { url: "/images/rakshudaviah/gallery/4.jpg", caption: "Happiness" },
+    { url: "/images/rakshudaviah/gallery/5.jpg", caption: "Love" },
+    { url: "/images/rakshudaviah/gallery/6.jpg", caption: "Forever" },
+    { url: "/images/rakshudaviah/gallery/7.jpg", caption: "Us" }
   ],
 
   // Invitation
   invitation: {
-    videoUrl: "",
-    thumbnailImage: "/images/nivifoundhershiv/gallery/6.jpg",
-    driveUrl: ""
+    videoUrl: "https://www.youtube.com/embed/Wdalk8xgcAY",
+    thumbnailImage: "/images/rakshudaviah/gallery/6.jpg",
+    driveUrl: "https://drive.google.com/file/d/1_szeAdT0fDLHOVhPmjKbOQOY8rGBacwm"
   },
 
-  // Social Media Preview Image - Use .jpg format
+  // Social Media Preview Image
   socialPreview: {
-    image: "/images/nivifoundhershiv/gallery/3.jpg",
+    image: "/images/rakshudaviah/gallery/3.jpg",
     width: "1200",
     height: "630"
   }

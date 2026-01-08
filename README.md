@@ -69,10 +69,11 @@ Change this one line to instantly transform your entire website! 🎨
   └── gallery/
 ```
 
-📖 **See detailed guides:**
-- **[THEMES_GUIDE.md](THEMES_GUIDE.md)** - 🎨 **NEW!** 7 stunning themes - switch with one line!
-- **[CONFIG_GUIDE.md](CONFIG_GUIDE.md)** - Complete configuration walkthrough
-- **[IMAGE_STRUCTURE.md](IMAGE_STRUCTURE.md)** - Image organization & requirements
+**Step 4:** Update meta tags for social sharing:
+```bash
+npm run update-meta
+```
+This automatically updates all meta tags in `index.html` based on your config!
 
 ### For Multiple Couples
 
@@ -130,7 +131,24 @@ No environment variables are required for basic functionality. The QR code will 
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+This command will:
+1. **Automatically update meta tags** from your config (title, description, social media preview)
+2. **Build the production bundle** with Vite
+3. Output files to the `dist` directory
+
+### Manual Meta Tag Update
+
+If you only want to update meta tags without building:
+```bash
+npm run update-meta
+```
+
+### Build Without Meta Update
+
+If you want to skip meta tag update:
+```bash
+npm run build:only
+```
 
 ## Technology Stack
 

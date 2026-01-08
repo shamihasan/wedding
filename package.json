@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/update-meta-tags.js && vite build",
+    "build:only": "vite build",
+    "update-meta": "node scripts/update-meta-tags.js",
+    "set": "node scripts/switch-couple.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

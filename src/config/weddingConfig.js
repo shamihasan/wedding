@@ -26,7 +26,9 @@ const weddingConfig = {
       nickname: "Shu",
       bio: "A soul rooted in faith and spirituality, guided by belief and inner calm. A highly skilled and dedicated software engineer by profession, he balances precision with purpose. A passionate solo traveler and a true foodie at heart, he values honesty, simplicity, and genuine human connections, living life with quiet strength, humility, and warmth ♥️",
       image: "/images/rakshudaviah/couple/groom.jpg"
-    }
+    },
+    // Image object-fit: 'cover' (default, crops to fill) or 'contain' (fits entire image)
+    // imageObjectFit: "cover" // Optional: defaults to 'cover' if not specified
   },
 
   // Hashtag & Folder

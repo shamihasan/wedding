@@ -420,7 +420,7 @@ section {
 .couple-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
@@ -702,44 +702,190 @@ section {
 
 /* ========== SAVE THE DATE BANNER ========== */
 .save-date-banner {
-  padding: 5rem 2rem;
+  position: relative;
+  padding: 1rem;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   text-align: center;
   color: var(--white);
+  overflow: hidden;
+}
+
+.banner-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.banner-decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.banner-heart,
+.banner-flower {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: floatBanner 6s ease-in-out infinite;
+}
+
+.banner-heart-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.banner-heart-2 { top: 20%; right: 15%; animation-delay: 1s; }
+.banner-heart-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
+.banner-heart-4 { bottom: 25%; right: 10%; animation-delay: 3s; }
+.banner-flower-1 { top: 30%; left: 5%; animation-delay: 0.5s; font-size: 2.5rem; }
+.banner-flower-2 { top: 60%; right: 8%; animation-delay: 1.5s; font-size: 2.2rem; }
+.banner-flower-3 { bottom: 35%; left: 12%; animation-delay: 2.5s; font-size: 2rem; }
+.banner-flower-4 { bottom: 10%; right: 18%; animation-delay: 3.5s; font-size: 2.3rem; }
+
+@keyframes floatBanner {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.banner-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.banner-ornament-top {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.banner-ornament-bottom {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.ornament-line {
+  height: 2px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.ornament-icon {
+  font-size: 1.8rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 .banner-text {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.banner-date-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.date-decoration {
+  font-size: 2.5rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
 
 .banner-date {
   font-size: 5rem;
   font-weight: 800;
-  margin-bottom: 1rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ffffff 0%, #ffe4e4 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); }
 }
 
 .banner-names {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+}
+
+.banner-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.banner-divider-line {
+  height: 1px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.banner-divider-heart {
   font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
 }
 
 .banner-hashtag {
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: 5px;
-  margin-top: 1.5rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 3s ease-in-out infinite;
+  margin: 1rem 0;
 }
 
 /* ========== ANIMATIONS ========== */
@@ -869,6 +1015,44 @@ section {
     font-size: 3.5rem;
   }
 
+  .banner-content {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .banner-names {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .date-decoration {
+    font-size: 1.8rem;
+  }
+
+  .banner-date-wrapper {
+    gap: 1rem;
+  }
+
+  .ornament-line {
+    width: 50px;
+  }
+
+  .banner-divider-line {
+    width: 60px;
+  }
+
+  .banner-heart,
+  .banner-flower {
+    font-size: 1.5rem;
+  }
+
+  .banner-flower-1,
+  .banner-flower-2,
+  .banner-flower-3,
+  .banner-flower-4 {
+    font-size: 1.8rem !important;
+  }
+
   .decorative-element {
     display: none;
   }
@@ -911,6 +1095,51 @@ section {
   .banner-hashtag {
     font-size: 1.2rem;
     letter-spacing: 1px;
+  }
+
+  .banner-text {
+    font-size: 2rem;
+  }
+
+  .banner-date {
+    font-size: 2.5rem;
+  }
+
+  .banner-names {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .banner-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .date-decoration {
+    font-size: 1.5rem;
+  }
+
+  .ornament-icon {
+    font-size: 1.5rem;
+  }
+
+  .banner-divider-heart {
+    font-size: 1.5rem;
+  }
+
+  .banner-ornament {
+    margin: 1.5rem 0;
+  }
+
+  .banner-divider {
+    margin: 1.5rem 0;
+  }
+
+  .ornament-line {
+    width: 40px;
+  }
+
+  .banner-divider-line {
+    width: 50px;
   }
 
   .bride-groom-names {

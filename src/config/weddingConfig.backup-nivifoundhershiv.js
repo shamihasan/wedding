@@ -26,7 +26,9 @@ const weddingConfig = {
       nickname: "Shiv", // Used in hashtag
       bio: "Simple at heart, caring by nature, and deeply rooted in tradition. With a jolly spirit and a warm smile, he brings joy wherever he goes. Today, he steps forward to begin a beautiful new journey of togetherness. 💍✨ ♥️",
       image: "/images/nivifoundhershiv/couple/groom.jpg"
-    }
+    },
+    // Image object-fit: 'cover' (default, crops to fill) or 'contain' (fits entire image)
+    imageObjectFit: "contain"
   },
 
   // Hashtag & Image Folder

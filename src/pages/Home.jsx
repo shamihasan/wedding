@@ -26,6 +26,9 @@ const Home = () => {
   const isYouTubeVideo = invitation.videoUrl &&
     (invitation.videoUrl.includes('youtube.com') || invitation.videoUrl.includes('youtu.be'));
 
+  // Determine object-fit for couple images from config, default to 'cover'
+  const coupleImageObjectFit = couple.imageObjectFit || 'cover';
+
 
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
@@ -142,6 +145,7 @@ const Home = () => {
                   src={couple.bride.image}
                   alt="Bride"
                   className="couple-image"
+                  style={{ objectFit: coupleImageObjectFit }}
                 />
                 <div className="couple-overlay"></div>
               </div>
@@ -164,6 +168,7 @@ const Home = () => {
                   src={couple.groom.image}
                   alt="Groom"
                   className="couple-image"
+                  style={{ objectFit: coupleImageObjectFit }}
                 />
                 <div className="couple-overlay"></div>
               </div>
@@ -445,11 +450,41 @@ const Home = () => {
 
       {/* Save the Date Banner */}
       <section className="save-date-banner">
+        <div className="banner-background-overlay"></div>
+        <div className="banner-decorative-elements">
+          <div className="banner-heart banner-heart-1">💕</div>
+          <div className="banner-heart banner-heart-2">💖</div>
+          <div className="banner-heart banner-heart-3">💗</div>
+          <div className="banner-heart banner-heart-4">💝</div>
+          <div className="banner-flower banner-flower-1">🌸</div>
+          <div className="banner-flower banner-flower-2">🌺</div>
+          <div className="banner-flower banner-flower-3">🌹</div>
+          <div className="banner-flower banner-flower-4">🌷</div>
+        </div>
         <div className="banner-content">
+          <div className="banner-ornament banner-ornament-top">
+            <div className="ornament-line"></div>
+            <div className="ornament-icon">❤️</div>
+            <div className="ornament-line"></div>
+          </div>
           <p className="banner-text script-font">Save the Date</p>
-          <h3 className="banner-date">{dates.wedding.shortDate}</h3>
-          <p className="banner-names">{coupleNames.full}</p>
+          <div className="banner-date-wrapper">
+            <div className="date-decoration date-decoration-left">✨</div>
+            <h3 className="banner-date">{dates.wedding.shortDate}</h3>
+            <div className="date-decoration date-decoration-right">✨</div>
+          </div>
+          <p className="banner-names script-font">{coupleNames.full}</p>
+          <div className="banner-divider">
+            <div className="banner-divider-line"></div>
+            <div className="banner-divider-heart">💍</div>
+            <div className="banner-divider-line"></div>
+          </div>
           <p className="banner-hashtag">{hashtag}</p>
+          <div className="banner-ornament banner-ornament-bottom">
+            <div className="ornament-line"></div>
+            <div className="ornament-icon">❤️</div>
+            <div className="ornament-line"></div>
+          </div>
         </div>
       </section>
 

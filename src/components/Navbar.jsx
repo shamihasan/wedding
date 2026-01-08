@@ -1,4 +1,5 @@
 import './Navbar.css';
+import weddingConfig from '../config/weddingConfig';
 
 const Navbar = () => {
   const scrollToSection = (sectionId) => {
@@ -8,11 +9,16 @@ const Navbar = () => {
     }
   };
 
+  // Generate dynamic logo text from couple names
+  const groomInitial = weddingConfig.couple.groom.firstName.charAt(0).toUpperCase();
+  const brideInitial = weddingConfig.couple.bride.firstName.charAt(0).toUpperCase();
+  const logoText = `${groomInitial} & ${brideInitial}`;
+
   return (
     <nav className="navbar">
       <div className="nav-container">
         <a href="#home" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-          <span className="logo-text">S & N</span>
+          <span className="logo-text">{logoText}</span>
         </a>
         <ul className="nav-menu">
           <li className="nav-item">
@@ -32,7 +38,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <a
-              href="https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
+              href={weddingConfig.venue.mapsUrl}
               className="nav-link nav-link-directions"
               target="_blank"
               rel="noopener noreferrer"

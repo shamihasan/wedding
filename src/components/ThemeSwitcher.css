@@ -1,0 +1,116 @@
+.theme-switcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.theme-toggle-btn {
+  background: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-options {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-options h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--text-dark-color);
+  font-family: var(--font-body);
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+}
+
+.theme-option-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin: 5px 0;
+  background: var(--background-color);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.theme-option-btn:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  transform: translateX(5px);
+}
+
+.theme-option-btn.active {
+  background: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--accent-color);
+  font-weight: 600;
+}
+
+.theme-icon {
+  font-size: 18px;
+}
+
+.theme-name {
+  flex: 1;
+  text-align: left;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .theme-switcher-container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .theme-toggle-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .theme-options {
+    right: -10px;
+    min-width: 180px;
+  }
+}

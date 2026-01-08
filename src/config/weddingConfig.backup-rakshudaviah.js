@@ -4,6 +4,13 @@
 // Make sure to add images to /public/images/rakshudaviah/ first
 
 const weddingConfig = {
+  // Theme Selection - Choose your visual theme!
+  // Available: "classic", "royal", "romantic", "modern", "emerald", "sunset", "burgundy"
+  theme: "romantic", // Change this to switch themes instantly!
+
+  // Show Theme Switcher Button (set to false before deployment)
+  showThemeSwitcher: false, // Set to false to hide the theme button
+
   // Couple Details
   couple: {
     bride: {
@@ -38,7 +45,9 @@ const weddingConfig = {
       displayDate: "Wednesday, February 11, 2026",
       shortDate: "11.02.2026",
       time: "20:00:00",
-      displayTime: "Dinner & Celebration"
+      displayTime: "Dinner & Celebration",
+      calendarMonth: "FEB",
+      calendarDay: "11"
     }
   },
 

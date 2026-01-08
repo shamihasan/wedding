@@ -34,7 +34,7 @@
   right: -35px;
   top: -5px;
   font-size: 1.2rem;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .nav-logo:hover::after {
-  opacity: 1;
+  transform: scale(1.2);
   right: -40px;
 }
 

@@ -217,8 +217,8 @@ const Home = () => {
             <div className="detail-card">
               <div className="detail-icon">
                 <div className="custom-calendar">
-                  <div className="calendar-month">{dates.wedding.date.split('-')[1] === '02' ? 'FEB' : 'MONTH'}</div>
-                  <div className="calendar-date">{dates.wedding.date.split('-')[2]}</div>
+                  <div className="calendar-month">{dates.wedding.calendarMonth}</div>
+                  <div className="calendar-date">{dates.wedding.calendarDay}</div>
                 </div>
               </div>
               <h3 className="detail-title">When</h3>

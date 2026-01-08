@@ -34,9 +34,9 @@ npm run dev
 
 ## Customization
 
-**NEW: Config-Based System!** 🎉
+**NEW: Config-Based System + 7 Stunning Themes!** 🎉🎨
 
-All wedding details are now centralized in a single configuration file. Simply edit one file to customize the entire website!
+All wedding details are now centralized in a single configuration file. Simply edit one file to customize the entire website! Plus, switch between 7 beautiful themes with just one line of code!
 
 ### Quick Start Customization
 
@@ -46,12 +46,19 @@ src/config/weddingConfig.js
 ```
 
 **Step 2:** Update these key details:
+- **Theme** - Choose from 7 stunning themes (just one line!)
 - Couple names and bios
 - Wedding hashtag
 - Event dates (engagement, wedding)
 - Venue location
 - Love story timeline
 - Images folder name
+
+### Quick Theme Change
+```javascript
+theme: "royal"  // Options: classic, royal, romantic, modern, emerald, sunset, burgundy
+```
+Change this one line to instantly transform your entire website! 🎨
 
 **Step 3:** Organize images by couple:
 ```
@@ -63,6 +70,7 @@ src/config/weddingConfig.js
 ```
 
 📖 **See detailed guides:**
+- **[THEMES_GUIDE.md](THEMES_GUIDE.md)** - 🎨 **NEW!** 7 stunning themes - switch with one line!
 - **[CONFIG_GUIDE.md](CONFIG_GUIDE.md)** - Complete configuration walkthrough
 - **[IMAGE_STRUCTURE.md](IMAGE_STRUCTURE.md)** - Image organization & requirements
 

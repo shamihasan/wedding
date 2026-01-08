@@ -4,13 +4,20 @@
 // Images: /public/images/nivifoundhershiv/
 
 const weddingConfig = {
+  // Theme Selection - Choose your visual theme!
+  // Available: "classic", "royal", "romantic", "modern", "emerald", "sunset", "burgundy"
+  theme: "royal", // Change this to switch themes instantly!
+
+  // Show Theme Switcher Button (set to false before deployment)
+  showThemeSwitcher: true, // Set to false to hide the theme button
+
   // Couple Details
   couple: {
     bride: {
       fullName: "Nivedita Jaiswal",
       firstName: "Nivedita",
       nickname: "Nivi", // Used in hashtag
-      bio: "A beautiful soul with a heart full of dreams. A dietician by profession and a fairy-tale believer by nature, she's bubbly, jolly, and spreads happiness wherever she goes. She finds joy in sunsets, comfort in a cup of tea, and happiness in shopping, living life with warmth, laughter, and endless love 🤍",
+      bio: "Loving at heart, cheerful in spirit, and beautifully rooted in customs and family values. Talkative, playful, and delightfully childish at times. 😄🌸💍 🤍",
       image: "/images/nivifoundhershiv/couple/bride.jpg"
     },
     groom: {
@@ -35,10 +42,12 @@ const weddingConfig = {
     },
     wedding: {
       date: "2026-02-21",
-      displayDate: "Friday, February 21, 2026",
+      displayDate: "Saturday, February 21, 2026",
       shortDate: "21.02.2026",
       time: "20:00:00", // 8:00 PM in 24-hour format
-      displayTime: "Dinner & Celebration"
+      displayTime: "Dinner & Celebration",
+      calendarMonth: "FEB",
+      calendarDay: "21"
     }
   },
 
@@ -49,7 +58,7 @@ const weddingConfig = {
     state: "Uttar Pradesh",
     country: "India",
     fullAddress: "Rajwada Prakash Vatika, Gosaiganj, Lucknow",
-    mapsUrl: "https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
+    mapsUrl: "https://maps.app.goo.gl/5W9hqRTWFdLnBroL9?g_st=iw"
   },
 
   // Website Details

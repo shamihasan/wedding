@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Import all theme fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Tangerine:wght@400;700&family=Poppins:wght@300;400;500;600&family=Crimson+Text:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600&family=Allura&family=Inter:wght@300;400;500;600&family=Lora:wght@400;600;700&family=Alex+Brush&family=Open+Sans:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Satisfy&family=Nunito:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Parisienne&family=Raleway:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -13,19 +14,29 @@
 }
 
 :root {
-  /* Romantic Rose Gold & Blush Theme */
-  --primary-color: #c9a87c;
-  --primary-dark: #a68a61;
-  --secondary-color: #e8b4b8;
-  --secondary-light: #f4d9dc;
-  --accent-gold: #d4af37;
-  --accent-rose: #d4869c;
-  --text-dark: #2c2c2c;
-  --text-light: #6b6b6b;
+  /* Theme colors - Will be dynamically set by theme system */
+  --primary-color: #d4af37;
+  --secondary-color: #8b7355;
+  --accent-color: #e8b4b8;
+  --text-dark-color: #2c2c2c;
+  --text-light-color: #666;
+  --background-color: #faf9f7;
+  --white-color: #ffffff;
+
+  /* Theme fonts - Will be dynamically set */
+  --font-primary: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-body: 'Lato', sans-serif;
+
+  /* Derived colors for compatibility */
+  --primary-dark: color-mix(in srgb, var(--primary-color) 80%, black);
+  --secondary-light: color-mix(in srgb, var(--secondary-color) 60%, white);
   --text-muted: #999;
-  --background-light: #fdfbf7;
-  --background-cream: #f9f6f0;
-  --white: #ffffff;
+  --background-light: var(--background-color);
+  --background-cream: color-mix(in srgb, var(--background-color) 95%, var(--primary-color));
+  --white: var(--white-color);
+
+  /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -33,24 +44,25 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-dark);
-  background-color: var(--background-light);
+  color: var(--text-dark-color);
+  background-color: var(--background-color);
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-primary);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .script-font {
-  font-family: 'Great Vibes', cursive;
+  font-family: var(--font-script);
   font-weight: 400;
 }
 
@@ -60,7 +72,7 @@ a {
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   cursor: pointer;
   border: none;
   outline: none;

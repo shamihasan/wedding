@@ -9,6 +9,8 @@
     "build:only": "vite build",
     "update-meta": "node scripts/update-meta-tags.js",
     "set": "node scripts/switch-couple.js",
+    "set:rakshudaviah": "node scripts/switch-couple.js rakshudaviah",
+    "set:nivifoundhershiv": "node scripts/switch-couple.js nivifoundhershiv",
     "lint": "eslint .",
     "preview": "vite preview"
   },

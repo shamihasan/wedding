@@ -6,10 +6,10 @@
 const weddingConfig = {
   // Theme Selection - Choose your visual theme!
   // Available: "classic", "royal", "romantic", "modern", "emerald", "sunset", "burgundy"
-  theme: "royal", // Change this to switch themes instantly!
+  theme: "burgundy", // Change this to switch themes instantly!
 
   // Show Theme Switcher Button (set to false before deployment)
-  showThemeSwitcher: true, // Set to false to hide the theme button
+  showThemeSwitcher: false, // Set to false to hide the theme button
 
   // Couple Details
   couple: {
@@ -157,9 +157,9 @@ const weddingConfig = {
 
   // Invitation
   invitation: {
-    videoUrl: "https://www.youtube.com/embed/Wdalk8xgcAY",
+    videoUrl: "",
     thumbnailImage: "/images/nivifoundhershiv/gallery/6.jpg",
-    driveUrl: "https://drive.google.com/file/d/1_szeAdT0fDLHOVhPmjKbOQOY8rGBacwm"
+    driveUrl: ""
   },
 
   // Social Media Preview Image - Use .jpg format

@@ -14,6 +14,9 @@ const Navbar = () => {
   const brideInitial = weddingConfig.couple.bride.firstName.charAt(0).toUpperCase();
   const logoText = `${groomInitial} & ${brideInitial}`;
 
+  // Check if invitation video exists
+  const hasInvitationVideo = weddingConfig.invitation?.videoUrl;
+
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -31,11 +34,13 @@ const Navbar = () => {
               Our Story
             </a>
           </li>
-          <li className="nav-item">
-            <a href="#invitation" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('invitation'); }}>
-              Invitation
-            </a>
-          </li>
+          {hasInvitationVideo && (
+            <li className="nav-item">
+              <a href="#invitation" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('invitation'); }}>
+                Invitation
+              </a>
+            </li>
+          )}
           <li className="nav-item">
             <a
               href={weddingConfig.venue.mapsUrl}

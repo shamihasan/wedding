@@ -69,11 +69,20 @@ Change this one line to instantly transform your entire website! 🎨
   └── gallery/
 ```
 
-**Step 4:** Update meta tags for social sharing:
+**Step 4:** Switch between couples (if managing multiple):
+```bash
+# Switch to couple 1
+npm run set:rakshudaviah
+
+# Switch to couple 2
+npm run set:nivifoundhershiv
+```
+This automatically updates both the config file AND meta tags!
+
+**Or manually update meta tags:**
 ```bash
 npm run update-meta
 ```
-This automatically updates all meta tags in `index.html` based on your config!
 
 ### For Multiple Couples
 

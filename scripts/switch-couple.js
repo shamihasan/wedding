@@ -16,17 +16,20 @@ const __dirname = path.dirname(__filename);
 
 // Get hashtag from command line arguments
 const args = process.argv.slice(2);
-const hashtag = args[0];
+let hashtag = args[0];
 
 if (!hashtag) {
-  console.error('\n❌ Error: Please provide a hashtag!\n');
+  console.error('\n❌ Error: Please provide a couple identifier!\n');
   console.log('Usage:');
-  console.log('  npm run set -- #RakShuDaViah');
-  console.log('  npm run set -- #NiviFoundHerShiv\n');
+  console.log('  npm run set:rakshudaviah');
+  console.log('  npm run set:nivifoundhershiv');
+  console.log('\nOr with arguments:');
+  console.log('  node scripts/switch-couple.js rakshudaviah');
+  console.log('  node scripts/switch-couple.js nivifoundhershiv\n');
   process.exit(1);
 }
 
-// Remove # if present
+// Remove # if present and convert to lowercase
 const cleanHashtag = hashtag.replace('#', '').toLowerCase();
 
 // Map hashtags to config file names

@@ -60,57 +60,60 @@ console.log('━━━━━━━━━━━━━━━━━━━━━━�
 // Read index.html
 let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
+// Helper function to escape special characters in replacement string
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 // Update title
 indexHtml = indexHtml.replace(
-  /<title>.*?<\/title>/,
+  /<title>.*?<\/title>/s,
   `<title>${title}</title>`
 );
 
 // Update meta description
 indexHtml = indexHtml.replace(
-  /<meta name="description" content=".*?"\/>/,
+  /<meta\s+name="description"\s+content="[^"]*"\s*\/>/g,
   `<meta name="description" content="${description}" />`
 );
 
 // Update Open Graph tags
 indexHtml = indexHtml.replace(
-  /<meta property="og:url" content=".*?"\/>/,
+  /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/g,
   `<meta property="og:url" content="${websiteUrl}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="og:title" content=".*?"\/>/,
+  /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/g,
   `<meta property="og:title" content="${title}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="og:description" content=".*?"\/>/,
+  /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/g,
   `<meta property="og:description" content="${description}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="og:image" content=".*?"\/>/,
+  /<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/g,
   `<meta property="og:image" content="${imageUrl}" />`
 );
 
 // Update Twitter tags
 indexHtml = indexHtml.replace(
-  /<meta property="twitter:url" content=".*?"\/>/,
+  /<meta\s+property="twitter:url"\s+content="[^"]*"\s*\/>/g,
   `<meta property="twitter:url" content="${websiteUrl}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="twitter:title" content=".*?"\/>/,
+  /<meta\s+property="twitter:title"\s+content="[^"]*"\s*\/>/g,
   `<meta property="twitter:title" content="${title}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="twitter:description" content=".*?"\/>/,
+  /<meta\s+property="twitter:description"\s+content="[^"]*"\s*\/>/g,
   `<meta property="twitter:description" content="${description}" />`
 );
 
 indexHtml = indexHtml.replace(
-  /<meta property="twitter:image" content=".*?"\/>/,
+  /<meta\s+property="twitter:image"\s+content="[^"]*"\s*\/>/g,
   `<meta property="twitter:image" content="${imageUrl}" />`
 );
 

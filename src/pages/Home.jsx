@@ -370,58 +370,60 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Invitation Section */}
-      <section id="invitation" className="qr-page">
-        <div className="qr-hero">
-          <div className="qr-container">
-            <h1 className="qr-title">Wedding Invitation</h1>
-            <p className="qr-description">
-              Watch our special invitation video and share it with your loved ones!
-            </p>
+      {/* Invitation Section - Only show if videoUrl exists */}
+      {invitation.videoUrl && (
+        <section id="invitation" className="qr-page">
+          <div className="qr-hero">
+            <div className="qr-container">
+              <h1 className="qr-title">Wedding Invitation</h1>
+              <p className="qr-description">
+                Watch our special invitation video and share it with your loved ones!
+              </p>
 
-            {/* Video Section */}
-            <div className="qr-card" style={{ marginBottom: '3rem' }}>
-              <div className="video-wrapper" onClick={() => setVideoLoaded(true)}>
-                {!videoLoaded ? (
-                  <div className="video-thumbnail">
-                    <img
-                      src={invitation.thumbnailImage}
-                      alt="Play Video"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        objectPosition: 'center 30%',
-                        borderRadius: '20px'
-                      }}
-                    />
-                    <div className="play-button-overlay">
-                      <div className="play-button">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                          <circle cx="40" cy="40" r="38" fill="rgba(255, 255, 255, 0.9)" stroke="var(--primary-color)" strokeWidth="3"/>
-                          <path d="M32 25L55 40L32 55V25Z" fill="var(--primary-color)"/>
-                        </svg>
+              {/* Video Section */}
+              <div className="qr-card" style={{ marginBottom: '3rem' }}>
+                <div className="video-wrapper" onClick={() => setVideoLoaded(true)}>
+                  {!videoLoaded ? (
+                    <div className="video-thumbnail">
+                      <img
+                        src={invitation.thumbnailImage}
+                        alt="Play Video"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center 30%',
+                          borderRadius: '20px'
+                        }}
+                      />
+                      <div className="play-button-overlay">
+                        <div className="play-button">
+                          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="38" fill="rgba(255, 255, 255, 0.9)" stroke="var(--primary-color)" strokeWidth="3"/>
+                            <path d="M32 25L55 40L32 55V25Z" fill="var(--primary-color)"/>
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <iframe
-                    width="100%"
-                    height="480"
-                    src={`${invitation.videoUrl}?autoplay=1`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: '20px' }}
-                  ></iframe>
-                )}
+                  ) : (
+                    <iframe
+                      width="100%"
+                      height="480"
+                      src={`${invitation.videoUrl}?autoplay=1`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ borderRadius: '20px' }}
+                    ></iframe>
+                  )}
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Save the Date Banner */}
       <section className="save-date-banner">

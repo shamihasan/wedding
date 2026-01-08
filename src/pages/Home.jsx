@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import Countdown from '../components/Countdown';
 import { QRCodeSVG } from 'qrcode.react';
+import weddingConfig, { processTimeline, getCoupleNames } from '../config/weddingConfig';
 import './Home.css';
 import './OurStory.css';
 import './QRCode.css';
@@ -10,68 +11,18 @@ const Home = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const qrRef = useRef(null);
 
-  const storyMilestones = [
-    {
-      id: 1,
-      title: "Our First Meet",
-      date: "2025",
-      description: "Our first meeting unfolded quietly, wrapped in faith and calm. We began by seeking blessings at the Hanuman Mandir, followed by sharing warm kachoris that sparked easy smiles. The journey then led us to a Gurudwara, where we bowed our heads in gratitude and shared kada prasad together. In those serene moments, comfort replaced nerves, and a gentle connection found its way into our hearts.",
-      image: "/images/timeline/1.jpg",
-      emoji: "🙏"
-    },
-    {
-      id: 2,
-      title: "Our Roka Ceremony",
-      date: "4th October 2025",
-      description: "On 4th October, surrounded by our closest family and relatives, our roka ceremony unfolded in an atmosphere of love and blessings. With heartfelt rituals, smiling faces, and gentle laughter, two families came together as one. In that moment, promises were sealed, hearts felt lighter, and our journey toward forever took a beautiful, meaningful step forward—wrapped in warmth, tradition, and togetherness.",
-      image: "/images/timeline/2.jpg",
-      emoji: "💍"
-    },
-    {
-      id: 3,
-      title: "11:11 – Written by the Universe",
-      date: "2025",
-      description: "We've always believed in the magic of 11:11 — a quiet reminder that the universe listens. Every moment, every step, seemed perfectly timed, as if unseen forces were gently guiding us toward each other. What felt like coincidence slowly revealed itself as destiny. In trusting these cosmic signs, we realized our meeting wasn't accidental — it was meant to be, written softly by the universe itself. ✨🤍",
-      image: "/images/timeline/3.jpg",
-      emoji: "✨"
-    },
-    {
-      id: 4,
-      title: "Discovering Similarities",
-      date: "2025",
-      description: "He was a solo traveller who found joy in wandering unknown paths, while she feared being alone but loved creating worlds with her imagination. He prayed to Lord Shiva; she found peace in the hymns of the Gurudwara. Both were jolly, family-loving souls who believed in 11:11 wishes—and yes, both screamed at the sight of a lizard!",
-      image: "/images/timeline/4.jpg",
-      emoji: "🦎"
-    },
-    {
-      id: 5,
-      title: "The Perfect Moment",
-      date: "2025",
-      description: "In a place that held beauty and meaning, Shubham carefully planned the most important moment of his life. With a heart full of love and nervous excitement, he chose this special spot to ask Rakshita to be his forever. The setting was perfect, the moment was magical, and her 'Yes' made everything complete. This is where their forever truly began.",
-      image: "/images/timeline/5.jpg",
-      emoji: "💐"
-    },
-    {
-      id: 6,
-      title: "Forever Begins",
-      date: "2025",
-      description: "What began as an arranged meeting slowly unfolded into a connection filled with faith, comfort, and quiet understanding. Guided by blessings, families, and perfectly timed moments, we chose each other with open hearts. In trusting the journey and the universe’s plan, we found something real and lasting. Not just a beginning, but a promise—our forever starts here, rooted in love, respect, and togetherness.",
-      image: "/images/timeline/6.jpg",
-      emoji: "💍"
-    }
-  ];
+  // Get data from config
+  const { couple, hashtag, dates, venue, hero, story, gallery, invitation } = weddingConfig;
+  const coupleNames = getCoupleNames();
+  const storyMilestones = processTimeline(
+    weddingConfig.timeline,
+    couple.bride.firstName,
+    couple.groom.firstName
+  );
 
-  const photoGallery = [
-    { url: "/images/gallery/1.jpeg", caption: "Our Moments" },
-    { url: "/images/gallery/2.jpeg", caption: "Together" },
-    { url: "/images/gallery/3.jpeg", caption: "Memories" },
-    { url: "/images/gallery/4.jpeg", caption: "Happiness" },
-    { url: "/images/gallery/5.jpeg", caption: "Love" },
-    { url: "/images/gallery/6.jpeg", caption: "Forever" },
-    { url: "/images/gallery/7.jpeg", caption: "Us" }
-  ];
+  const photoGallery = gallery;
+  const invitationUrl = invitation.driveUrl;
 
-  const invitationUrl = "https://drive.google.com/file/d/1_szeAdT0fDLHOVhPmjKbOQOY8rGBacwm";
 
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
@@ -104,7 +55,7 @@ const Home = () => {
       <section id="home" className="hero">
         <div className="hero-background">
           <img
-            src="/images/hero/wedding-hero.jpg"
+            src={hero.backgroundImage}
             alt="Wedding"
             className="hero-bg-image"
           />
@@ -117,18 +68,18 @@ const Home = () => {
           <div className="decorative-element bottom-right"></div>
 
           <div className="hero-text">
-            <p className="hero-subtitle script-font">Together Forever</p>
+            <p className="hero-subtitle script-font">{hero.subtitle}</p>
             <h1 className="hero-title">
-              <span className="bride-groom-names script-font">Shubham & Rakshita</span>
+              <span className="bride-groom-names script-font">{coupleNames.full}</span>
             </h1>
             <div className="divider-fancy">
               <div className="divider-line"></div>
               <div className="divider-heart">❤</div>
               <div className="divider-line"></div>
             </div>
-            <p className="hero-hashtag">#RakShuDaViah</p>
-            <p className="hero-date">February 11, 2026</p>
-            <p className="hero-location">The Royal Hall, Chevron, Noida</p>
+            <p className="hero-hashtag">{hashtag}</p>
+            <p className="hero-date">{dates.wedding.displayDate}</p>
+            <p className="hero-location">{venue.fullAddress}</p>
 
             <div className="hero-buttons">
               <a
@@ -185,16 +136,16 @@ const Home = () => {
             <div className="couple-card">
               <div className="couple-image-wrapper">
                 <img
-                  src="/images/couple/bride.jpg"
+                  src={couple.bride.image}
                   alt="Bride"
                   className="couple-image"
                 />
                 <div className="couple-overlay"></div>
               </div>
-              <h3 className="couple-name script-font">Rakshita</h3>
+              <h3 className="couple-name script-font">{couple.bride.fullName}</h3>
               <p className="couple-role">The Bride</p>
               <p className="couple-bio">
-                A beautiful soul with a heart full of dreams. A dietician by profession and a fairy-tale believer by nature, she's bubbly, jolly, and spreads happiness wherever she goes. She finds joy in sunsets, comfort in a cup of tea, and happiness in shopping, living life with warmth, laughter, and endless love 🤍
+                {couple.bride.bio}
               </p>
             </div>
 
@@ -207,16 +158,16 @@ const Home = () => {
             <div className="couple-card">
               <div className="couple-image-wrapper">
                 <img
-                  src="/images/couple/groom.jpg"
+                  src={couple.groom.image}
                   alt="Groom"
                   className="couple-image"
                 />
                 <div className="couple-overlay"></div>
               </div>
-              <h3 className="couple-name script-font">Shubham</h3>
+              <h3 className="couple-name script-font">{couple.groom.fullName}</h3>
               <p className="couple-role">The Groom</p>
               <p className="couple-bio">
-                A soul rooted in faith and spirituality, guided by belief and inner calm. A highly skilled and dedicated software engineer by profession, he balances precision with purpose. A passionate solo traveler and a true foodie at heart, he values honesty, simplicity, and genuine human connections, living life with quiet strength, humility, and warmth ♥️
+                {couple.groom.bio}
               </p>
             </div>
           </div>
@@ -227,7 +178,7 @@ const Home = () => {
       <section className="love-story-preview">
         <div className="story-background">
           <img
-            src="/images/hero/love-story-bg.jpg"
+            src={story.backgroundImage}
             alt="Love Story"
             className="story-bg-image"
           />
@@ -241,10 +192,9 @@ const Home = () => {
             <div className="divider-line-white"></div>
           </div>
           <p className="story-quote script-font">
-            "In all the world, there is no heart for me like yours.
-            In all the world, there is no love for you like mine."
+            "{story.quote}"
           </p>
-          <p className="story-author">— Maya Angelou</p>
+          <p className="story-author">— {story.quoteAuthor}</p>
           <a
             href="#our-story"
             className="btn btn-white"
@@ -267,23 +217,23 @@ const Home = () => {
             <div className="detail-card">
               <div className="detail-icon">
                 <div className="custom-calendar">
-                  <div className="calendar-month">FEB</div>
-                  <div className="calendar-date">11</div>
+                  <div className="calendar-month">{dates.wedding.date.split('-')[1] === '02' ? 'FEB' : 'MONTH'}</div>
+                  <div className="calendar-date">{dates.wedding.date.split('-')[2]}</div>
                 </div>
               </div>
               <h3 className="detail-title">When</h3>
-              <p className="detail-info">Wednesday, February 11, 2026</p>
-              <p className="detail-time">Dinner & Celebration</p>
+              <p className="detail-info">{dates.wedding.displayDate}</p>
+              <p className="detail-time">{dates.wedding.displayTime}</p>
             </div>
 
             <div className="detail-card">
               <div className="detail-icon">📍</div>
               <h3 className="detail-title">Where</h3>
-              <p className="detail-info">The Royal Hall</p>
-              <p className="detail-address">Chevron, Noida</p>
-              <p className="detail-address">Uttar Pradesh, India</p>
+              <p className="detail-info">{venue.name}</p>
+              <p className="detail-address">{venue.address}</p>
+              <p className="detail-address">{venue.state}, {venue.country}</p>
               <a
-                href="https://maps.app.goo.gl/t6EMifRzx95FigeW9?g_st=ipc"
+                href={venue.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="location-btn"
@@ -321,7 +271,7 @@ const Home = () => {
               Every love story is beautiful, but ours is our favorite. <br />
               Here's how two souls found each other and decided to spend forever together.
             </p>
-            <p className="story-hashtag">#RakShuDaViah</p>
+            <p className="story-hashtag">{hashtag}</p>
           </div>
         </div>
 
@@ -364,8 +314,7 @@ const Home = () => {
         <div className="quote-section">
           <div className="quote-container">
             <p className="large-quote script-font">
-              "Love is not about how many days, months, or years you have been together.
-              Love is about how much you love each other every single day."
+              "{story.largeQuote}"
             </p>
             <div className="quote-decoration">
               <div className="quote-line"></div>
@@ -416,7 +365,7 @@ const Home = () => {
             <p className="cta-subtext">
               We can't wait to celebrate with all of you!
             </p>
-            <p className="cta-hashtag">#RakShuDaViah</p>
+            <p className="cta-hashtag">{hashtag}</p>
           </div>
         </div>
       </section>
@@ -436,7 +385,7 @@ const Home = () => {
                 {!videoLoaded ? (
                   <div className="video-thumbnail">
                     <img
-                      src="/images/gallery/6.jpeg"
+                      src={invitation.thumbnailImage}
                       alt="Play Video"
                       style={{
                         width: '100%',
@@ -459,7 +408,7 @@ const Home = () => {
                   <iframe
                     width="100%"
                     height="480"
-                    src="https://www.youtube.com/embed/Wdalk8xgcAY?autoplay=1"
+                    src={`${invitation.videoUrl}?autoplay=1`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -478,9 +427,9 @@ const Home = () => {
       <section className="save-date-banner">
         <div className="banner-content">
           <p className="banner-text script-font">Save the Date</p>
-          <h3 className="banner-date">11.02.2026</h3>
-          <p className="banner-names">Shubham & Rakshita</p>
-          <p className="banner-hashtag">#RakShuDaViah</p>
+          <h3 className="banner-date">{dates.wedding.shortDate}</h3>
+          <p className="banner-names">{coupleNames.full}</p>
+          <p className="banner-hashtag">{hashtag}</p>
         </div>
       </section>
 

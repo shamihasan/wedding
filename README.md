@@ -34,19 +34,45 @@ npm run dev
 
 ## Customization
 
-### Update Your Story
+**NEW: Config-Based System!** 🎉
 
-Edit `/src/pages/OurStory.jsx` to customize:
-- Story milestones and dates
-- Photo URLs (replace placeholder images with your own)
-- Story descriptions
+All wedding details are now centralized in a single configuration file. Simply edit one file to customize the entire website!
 
-### Update Wedding Details
+### Quick Start Customization
 
-Edit `/src/pages/Home.jsx` to update:
-- Wedding date
-- Venue information
-- Couple names
+**Step 1:** Edit the configuration file:
+```
+src/config/weddingConfig.js
+```
+
+**Step 2:** Update these key details:
+- Couple names and bios
+- Wedding hashtag
+- Event dates (engagement, wedding)
+- Venue location
+- Love story timeline
+- Images folder name
+
+**Step 3:** Organize images by couple:
+```
+/public/images/{hashtagFolder}/
+  ├── couple/
+  ├── hero/
+  ├── timeline/
+  └── gallery/
+```
+
+📖 **See detailed guides:**
+- **[CONFIG_GUIDE.md](CONFIG_GUIDE.md)** - Complete configuration walkthrough
+- **[IMAGE_STRUCTURE.md](IMAGE_STRUCTURE.md)** - Image organization & requirements
+
+### For Multiple Couples
+
+The new structure supports multiple couples:
+- Each couple gets their own image folder
+- Switch between couples by changing the config
+- Backup configs available for easy switching
+- Example: `weddingConfig.backup-rakshudaviah.js`
 
 ### Change Color Theme
 

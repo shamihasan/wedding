@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getWeddingDateTime, getCoupleNames } from '../config/weddingConfig';
 import './Countdown.css';
 
 const Countdown = () => {
@@ -9,9 +10,10 @@ const Countdown = () => {
     seconds: 0
   });
   const [isWeddingDay, setIsWeddingDay] = useState(false);
+  const coupleNames = getCoupleNames();
 
   useEffect(() => {
-    const weddingDate = new Date('2026-02-11T20:00:00').getTime();
+    const weddingDate = getWeddingDateTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -47,7 +49,7 @@ const Countdown = () => {
         </div>
         <h2 className="wedding-day-title script-font">Mission Accomplished!</h2>
         <p className="wedding-day-text">
-          Shubham & Rakshita are officially off the market! 💍
+          {coupleNames.full} are officially off the market! 💍
         </p>
         <p className="wedding-day-subtext">
           They survived the wedding planning, conquered the dance floor,

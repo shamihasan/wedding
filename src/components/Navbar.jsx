@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <a href="#home" className="nav-logo" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-          <span className="logo-text">S & R</span>
+          <span className="logo-text">S & N</span>
         </a>
         <ul className="nav-menu">
           <li className="nav-item">
